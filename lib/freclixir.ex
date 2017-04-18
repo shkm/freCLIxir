@@ -1,18 +1,5 @@
 defmodule Freclixir do
-  @moduledoc """
-  Documentation for Freclixir.
-  """
+  @version Mix.Project.config[:version]
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Freclixir.hello
-      :world
-
-  """
-  def hello do
-    :world
-  end
+  def version, do: @version
 end
