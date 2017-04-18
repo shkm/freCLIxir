@@ -6,4 +6,5 @@ defmodule Freclixir.Api.Timer do
   def start(project_id) do
     Freclixir.Api.put("projects/#{project_id}/timer/start")
   end
+
 end
