@@ -30,9 +30,9 @@ Pop that into `~/.freclixir/token` and keep it secret (keep it safe).
 
 TODO: write a decent help. For now:
 
-freclixir projects list
-freclixir timers list
-freclixir timers start [project_id_or_name]
+- freclixir projects list
+- freclixir timers list
+- freclixir timers start [project_id_or_name]
 
 ## TODO
 
