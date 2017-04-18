@@ -32,12 +32,15 @@ TODO: write a decent help. For now:
 
 freclixir projects list
 freclixir timers list
-freclixir timers start [project_id]
+freclixir timers start [project_id_or_name]
 
 ## TODO
 
-A lot. I primarily want this tool for tracking my time, so next up is to improve that
-so we don't have to type in project IDs.
+A lot. Short-term:
+
+- Start timer by fuzzy-finding project name
+- Project aliases
+
 
 ## Why?
 
