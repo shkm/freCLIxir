@@ -12,6 +12,20 @@ mix escript.build
 # copy freclixir somewhere in your path
 ```
 
+
+You'll also need a token. You can get one from:
+
+```
+Your freckle domain
+|> Connected Apps
+|> Freckle API
+|> Personal Access Tokens
+|> Settings
+```
+
+Pop that into `~/.freclixir/token` and keep it secret (keep it safe).
+
+
 ## Commands
 
 TODO: write a decent help. For now:
