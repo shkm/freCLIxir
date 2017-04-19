@@ -13,7 +13,6 @@ defmodule Freclixir.Cli.Projects do
       ]
     end
 
-    TableRex.quick_render!(rows, headers)
-    |> IO.puts
+    IO.puts TableRex.quick_render!(rows, headers)
   end
 end

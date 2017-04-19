@@ -15,8 +15,7 @@ defmodule Freclixir.Cli.Timers do
       ]
     end
 
-    TableRex.quick_render!(rows, headers)
-    |> IO.puts
+    IO.puts TableRex.quick_render!(rows, headers)
   end
 
   def pause do
@@ -35,15 +34,14 @@ defmodule Freclixir.Cli.Timers do
     case result do
       {:ok, timer} -> IO.puts ~s{Now timing #{timer["project"]["name"]} (#{timer["formatted_time"]}).}
       {:error, :invalid, _} -> IO.puts "Error: Freckle probably couldn't find a product by that ID."
-      {:error, reason} -> IO.puts "Error: #{reason}"
+      {:error, reason} -> Freclixir.Cli.print_error reason
     end
   end
 
   defp start_by_id(project_id), do: Timer.start(project_id)
   defp start_by_name(project_name) do
-    case Project.find_by_name(project_name) do
-      {:ok, project} -> start_by_id(project["id"])
-      {:error, reason} -> {:error, reason}
+    with {:ok, project} <- Project.find_by_name(project_name) do
+      start_by_id(project["id"])
     end
   end
 end

@@ -3,7 +3,7 @@ defmodule Freclixir.Mixfile do
 
   def project do
     [app: :freclixir,
-     version: "0.3.0",
+     version: "0.3.1",
      elixir: "~> 1.4",
      escript: [main_module: Freclixir.Cli],
      deps: deps()]
