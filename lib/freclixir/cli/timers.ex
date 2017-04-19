@@ -19,6 +19,13 @@ defmodule Freclixir.Cli.Timers do
     |> IO.puts
   end
 
+  def pause do
+    case Timer.pause do
+      {:ok, timer} -> IO.puts ~s{Paused #{timer["project"]["name"]} (#{timer["formatted_time"]}).}
+      {:error, reason} -> Freclixir.Cli.print_error(reason)
+    end
+  end
+
   def start(project_id) do
     result = case Integer.parse(project_id) do
       {_, ""} -> start_by_id(project_id)

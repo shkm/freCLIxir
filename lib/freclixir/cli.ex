@@ -8,6 +8,8 @@ defmodule Freclixir.Cli do
     |> process
   end
 
+  def print_error(reason), do: IO.puts "Error: #{reason}"
+
   defp parse_args(args) do
     options = OptionParser.parse(args, switches: [version: :boolean])
 
@@ -15,6 +17,7 @@ defmodule Freclixir.Cli do
       {[version: true], _, _} -> :version
       {_, ["timers"], _} -> [Timers, :help]
       {_, ["timers", "list"], _} -> [Timers, :list]
+      {_, ["timers", "pause"], _} -> [Timers, :pause]
       {_, ["timers", "start", project_id], _} -> [Timers, :start, [project_id]]
       {_, ["projects"], _} -> [Projects, :help]
       {_, ["projects", "list"], _} -> [Projects, :list]
